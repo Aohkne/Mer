@@ -1,0 +1,27 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .theme {
+    img {
+      width: 25px;
+      height: 25px;
+    }
+    &:nth-child(2) {
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    & + .theme {
+      margin-top: 20px;
+    }
+
+    &:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
+  }
+}

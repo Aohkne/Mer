@@ -1,0 +1,27 @@
+.App {
+  padding: 10px 5px;
+  background-color: var(--background-color);
+  transition: all 0.3s ease-in-out;
+  height: 100vh;
+
+  header {
+    img {
+      width: 80px;
+      height: auto;
+    }
+  }
+}
+
+//Light theme
+:root {
+  --background-color: #e3e3d7;
+  --nav-background-color: #1e1f20;
+  --nav-item-brightness: 100%;
+}
+
+//Dark theme
+[data-theme="dark"] {
+  --background-color: #1e1f20;
+  --nav-background-color: #fcba30;
+  --nav-item-brightness: 0%;
+}

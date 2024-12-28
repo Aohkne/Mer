@@ -1,0 +1,60 @@
+.wrapper {
+  position: fixed;
+  overflow: hidden;
+  right: 1%;
+  bottom: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .theme {
+    transform: translateY(200px);
+    transition: transform 0.5s ease-out;
+  }
+
+  .chat-icon {
+    margin: 20px 0 20px;
+    transition: transform 0.5s ease;
+    transform: rotate(0deg);
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      transform: rotate(360deg);
+    }
+  }
+
+  &:hover {
+    .theme {
+      animation: slide-in 0.3s ease-in forwards;
+    }
+  }
+}
+
+//Animation
+@keyframes slide-in {
+  0% {
+    transform: translateY(150px);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  75% {
+    transform: translateY(50px);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,44 @@
+.wrapper {
+  position: fixed;
+  top: 50%;
+  left: 1%;
+  transform: translateY(-50%);
+  padding: 10px 10px;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: var(--nav-background-color);
+  height: 50px;
+  transition: height 0.3s ease-in;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .item {
+    & + .item {
+      margin-top: 25px;
+    }
+
+    img {
+      width: 20px;
+      height: auto;
+      filter: brightness(var(--nav-item-brightness));
+    }
+
+    &.selected {
+      img {
+        filter: brightness(100%);
+      }
+    }
+
+    &:hover {
+      img {
+        filter: brightness(200%);
+      }
+    }
+  }
+  &:hover {
+    cursor: pointer;
+    height: 200px;
+  }
+}
