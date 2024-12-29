@@ -1,8 +1,12 @@
+html {
+  font-size: 62.5%;
+  font-family: "Roboto", sans-serif;
+}
+
 .App {
   padding: 10px 5px;
   background-color: var(--background-color);
   transition: all 0.3s ease-in-out;
-  height: 100vh;
 
   header {
     img {
@@ -10,18 +14,64 @@
       height: auto;
     }
   }
+
+  a {
+    text-decoration: none;
+  }
 }
 
 //Light theme
 :root {
+  //Variable
   --background-color: #e3e3d7;
   --nav-background-color: #1e1f20;
-  --nav-item-brightness: 100%;
+  --icon-item-brightness: 100%;
+  --slider-shadow: #00000040;
+
+  --card-bg-color: #000000;
+  --card-title-color: #fff;
+
+  //Classes
+  .title-color {
+    color: #fff;
+  }
+  .normal-bg {
+    background-color: #000000;
+  }
+  .intro-bg {
+    background-color: #6eccf4;
+  }
+  .outro-bg {
+    background-color: #fcba30;
+  }
+  .music-bg {
+    background-color: #cb6be6;
+  }
+  .effect-bg {
+    background-color: #75d5b3;
+  }
+  .template-bg {
+    background-color: #ed7843;
+  }
 }
 
 //Dark theme
 [data-theme="dark"] {
+  //Variable
   --background-color: #1e1f20;
   --nav-background-color: #fcba30;
-  --nav-item-brightness: 0%;
+  --icon-item-brightness: 0%;
+  --slider-shadow: #fff;
+
+  --card-bg-color: #fff;
+  --card-title-color: #000000;
+
+  //Classes
+  .title-color {
+    color: #000000;
+  }
+
+  .normal-bg {
+    background-color: #fcba30;
+  }
 }

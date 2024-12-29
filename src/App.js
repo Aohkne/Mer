@@ -1,5 +1,5 @@
 import Control from "./components/Control/Control";
-import HomePage from "./layouts/Home/Home";
+import HomePage from "./pages/Home/Home";
 
 import "./style/GlobalStyle.scss";
 

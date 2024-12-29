@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "code": "tam-giac-▲",
+    "title": "Tam Giác ▲",
+    "type": "outro",
+    "img": "/img/template/outro/tam-giac.png",
+    "youtube": "https://www.youtube.com/watch?v=k5L8QcgiJq4&list=PLmrucyBK64XP6mOQVjox5cgfqCR1uyoaE"
+  },
+  {
+    "id": 2,
+    "code": "u-oa",
+    "title": "Ú òa",
+    "type": "intro",
+    "img": "/img/template/intro/u-oa.png",
+    "youtube": "https://www.youtube.com/watch?v=Ak5l2NLjCVo"
+  },
+  {
+    "id": 3,
+    "code": "2012_2022",
+    "title": "2012_2022",
+    "type": "music",
+    "img": "/img/template/music/2012_2022.png",
+    "youtube": "https://www.youtube.com/watch?v=iq9HSLWkO3c"
+  }
+]
