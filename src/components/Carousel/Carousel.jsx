@@ -16,7 +16,7 @@ function Carosel() {
     <Carousel className={cx("wrapper")}>
       {images.map((e, index) => (
         <Carousel.Item key={index} className={cx("item")}>
-          <img className={cx("w-100", "h-100")} src={e.src} alt={e.alt} />
+          <img src={e.src} alt={e.alt} />
         </Carousel.Item>
       ))}
     </Carousel>

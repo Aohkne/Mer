@@ -1,11 +1,14 @@
 .wrapper {
-  height: 350px;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0px 4px 4px 0 var(--slider-shadow);
 
   .item {
+    height: 100%;
     img {
+      height: 100%; /* Set image to cover the height */
+      width: 100%; /* Make sure it takes the full width */
+      object-fit: cover;
       object-position: center;
     }
   }

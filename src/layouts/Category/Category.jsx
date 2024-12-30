@@ -38,7 +38,7 @@ function Category() {
       <h3 className={cx("title", "normal-bg", "title-color")}>Popular</h3>
       <Row>
         {data.map((item, index) => (
-          <div className={cx("col-lg-4", "my-3")} key={index}>
+          <div className={cx("col-lg-3", "col-md-6", "my-3")} key={index}>
             <Card data={item} />
           </div>
         ))}

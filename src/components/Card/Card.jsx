@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
-import Tag from "../Tag/Tag";
+
+import YouTubeVideoInfo from "../../api/YoutubeVideoInfo/sever-youtube";
+
 import styles from "./Card.module.scss";
 import classNames from "classnames/bind";
 
@@ -16,21 +18,10 @@ function Card({ data }) {
         />
 
         <div className={cx("content")}>
-          <div className={cx("card-title")}>{data.title}</div>
-          <div
-            className={cx(
-              "card-description",
-              "d-flex",
-              "justify-content-between"
-            )}
-          >
-            <Tag type={data.type} />
-
-            <div className={cx("card-download")}>
-              <img src="/img/home/download-icon.png" alt="download-icon" />
-              {100}
-            </div>
-          </div>
+          <YouTubeVideoInfo
+            type={data.type}
+            videoId={data.youtube.split("v=")[1].split("&")[0]}
+          />
         </div>
       </div>
     </Link>
