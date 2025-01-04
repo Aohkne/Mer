@@ -1,16 +1,17 @@
-import Tag from "../../components/Tag/Tag";
-
 import React, { useEffect, useState } from "react";
 
 import styles from "./YoutubeVideoInfo.module.scss";
 import classNames from "classnames/bind";
+import Card from "../../components/Card/Card";
 
 const cx = classNames.bind(styles);
 
-const YouTubeVideoInfo = ({ type, videoId }) => {
+const YouTubeVideoInfo = ({ data, type }) => {
   const [videoInfo, setVideoInfo] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const videoId = data.youtube.split("v=")[1].split("&")[0];
 
   useEffect(() => {
     const fetchVideoData = async () => {
@@ -45,33 +46,16 @@ const YouTubeVideoInfo = ({ type, videoId }) => {
   if (!videoInfo) return <p>No video information available.</p>;
 
   const { snippet, statistics } = videoInfo;
+
   return (
-    <div className={cx("info-wrapper")}>
-      <div className={cx("info-title")}>{snippet.title}</div>
-
-      <Tag type={type} />
-
-      <div
-        className={cx("info-description", "d-flex", "justify-content-between")}
-      >
-        <div className={cx("info-content")}>
-          <img
-            src="/img/detail/view-icon.png"
-            alt="view-icon"
-            className={cx("view-icon")}
-          />
-          {statistics.viewCount}
-        </div>
-
-        <div className={cx("info-content")}>
-          <img
-            src="/img/detail/like-icon.png"
-            alt="like-icon"
-            className={cx("like-icon")}
-          />
-          {statistics.likeCount}
-        </div>
-      </div>
+    <div>
+      <Card
+        data={data}
+        title={snippet.title}
+        type={type}
+        view={statistics.viewCount}
+        like={statistics.likeCount}
+      />
     </div>
   );
 };

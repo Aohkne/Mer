@@ -5,12 +5,16 @@ import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
-function Nav() {
+function Nav({ direction }) {
   const location = useLocation();
 
   return (
-    <div className={cx("wrapper")}>
-      <div className={cx("item", { selected: location.pathname === "/" })}>
+    <div className={cx("wrapper", { horizontal: direction === "horizontal" })}>
+      <div
+        className={cx("item", {
+          selected: location.pathname === "/",
+        })}
+      >
         <Link to="/">
           <img src="/img/home/home-icon.png" alt="home-icon" />
         </Link>

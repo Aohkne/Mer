@@ -1,5 +1,6 @@
 import Control from "./components/Control/Control";
 import HomePage from "./pages/Home/Home";
+import Template from "./pages/Template/Template";
 
 import "./style/GlobalStyle.scss";
 
@@ -15,7 +16,7 @@ function App() {
       </header>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        {/* <Route path="/template" element={<QuizPage />} /> */}
+        <Route path="/template" element={<Template />} />
         {/* <Route path="/guide" element={<PricingPage />} /> */}
         {/* <Route path="/info" element={<GuidePage />} /> */}
       </Routes>

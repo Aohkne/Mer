@@ -28,7 +28,7 @@
 
     &.selected {
       img {
-        filter: brightness(100%);
+        filter: brightness(200%);
       }
     }
 
@@ -41,5 +41,29 @@
   &:hover {
     cursor: pointer;
     height: 180px;
+  }
+
+  &.horizontal {
+    top: 90%;
+    left: 50%;
+
+    transform: translate(-50%, 30%);
+    width: 40px;
+
+    flex-direction: row;
+    transition: width 0.3s ease-in;
+
+    .item {
+      & + .item {
+        margin-top: 0px;
+        margin-left: 20px;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+      width: 160px;
+      height: 45px;
+    }
   }
 }
