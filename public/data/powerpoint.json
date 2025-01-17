@@ -2,8 +2,7 @@
   {
     "id": 1,
     "code": "tam-giac-▲",
-
-    "type": "outro",
+    "type": "intro",
     "img": "/img/template/outro/tam-giac.png",
     "youtube": "https://www.youtube.com/watch?v=k5L8QcgiJq4"
   },
@@ -60,6 +59,7 @@
     "id": 9,
     "code": "sieu-nhan",
     "type": "intro",
+    "template": ["hero"],
     "img": "/img/template/intro/sieu-nhan.png",
     "youtube": "https://www.youtube.com/watch?v=rShrYMYtGH0"
   },
@@ -74,6 +74,7 @@
     "id": 11,
     "code": "mot-mieng",
     "type": "intro",
+    "template": ["anime"],
     "img": "/img/template/intro/mot-mieng.png",
     "youtube": "https://www.youtube.com/watch?v=HSmMsq91aWA"
   },
@@ -81,6 +82,7 @@
     "id": 12,
     "code": "inside",
     "type": "intro",
+    "template": ["movie"],
     "img": "/img/template/intro/inside.png",
     "youtube": "https://www.youtube.com/watch?v=EjX3-cI88WU"
   },
@@ -88,6 +90,7 @@
     "id": 13,
     "code": "genshin",
     "type": "intro",
+    "template": ["anime", "game"],
     "img": "/img/template/intro/genshin.png",
     "youtube": "https://www.youtube.com/watch?v=jyBVjqhvxRU"
   },
@@ -95,6 +98,7 @@
     "id": 14,
     "code": "mot-mieng-2",
     "type": "outro",
+    "template": ["anime"],
     "img": "/img/template/outro/mot-mieng-2.png",
     "youtube": "https://www.youtube.com/watch?v=bIn3Yqj61L0"
   },
@@ -102,6 +106,7 @@
     "id": 15,
     "code": "valorant",
     "type": "intro",
+    "template": ["game"],
     "img": "/img/template/intro/valorant.png",
     "youtube": "https://www.youtube.com/watch?v=qaWTEY3GV8E"
   },
@@ -109,6 +114,7 @@
     "id": 16,
     "code": "minh-a",
     "type": "outro",
+    "template": ["movie"],
     "img": "/img/template/outro/minh-a.png",
     "youtube": "https://www.youtube.com/watch?v=KPXFLSJ9ZVA"
   },

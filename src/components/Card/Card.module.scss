@@ -19,6 +19,13 @@
         color: var(--card-title-color);
       }
 
+      .tag-container {
+        display: flex;
+        align-items: start;
+        min-height: 65px;
+        margin: 10px 0 5px;
+      }
+
       .info-description {
         margin-top: 10px;
         align-items: center;

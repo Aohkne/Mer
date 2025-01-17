@@ -23,7 +23,6 @@ const YouTubeVideoInfo = ({ data, type }) => {
         if (!response.ok) {
           throw new Error("Failed to fetch video data");
         }
-
         const data = await response.json();
 
         if (data.items && data.items.length > 0) {

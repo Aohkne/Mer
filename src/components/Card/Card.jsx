@@ -6,7 +6,7 @@ import Tag from "../Tag/Tag";
 
 const cx = classNames.bind(styles);
 
-function Card({ data, title, type, view, like }) {
+function Card({ data, title, type, template, view, like }) {
   return (
     <Link to={`/template/${data.code}`}>
       <div className={cx("card-wrapper")}>
@@ -20,7 +20,14 @@ function Card({ data, title, type, view, like }) {
           <div className={cx("info-wrapper")}>
             <div className={cx("info-title")}>{title}</div>
 
-            <Tag type={type} />
+            <div className={cx("tag-container")}>
+              <Tag type={type} />
+
+              {data.template &&
+                data.template.map((item, index) => (
+                  <Tag template={item} key={index} />
+                ))}
+            </div>
 
             <div
               className={cx(

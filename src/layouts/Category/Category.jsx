@@ -8,8 +8,11 @@ import { Row } from "react-bootstrap";
 
 const cx = classNames.bind(styles);
 
-function Category({ Category }) {
+function Category({ Category, Search, searchCate }) {
   const [data, setData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
+  const [isFound, setIsFound] = useState(false);
+
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -30,36 +33,122 @@ function Category({ Category }) {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    let tmpData = [];
+
+    if (!Search && !searchCate) {
+      switch (Category) {
+        case "new":
+          tmpData = data.sort((a, b) => b.id - a.id).slice(0, 4);
+          break;
+        case "intro":
+        case "outro":
+        case "music":
+        case "effect":
+          tmpData = data.filter((item) => item.type === Category);
+          break;
+        default:
+          tmpData = data;
+          break;
+      }
+    } else {
+      if (searchCate.length > 0) {
+        if (searchCate.length === 1) {
+          searchCate.forEach((cate) => {
+            tmpData = tmpData.concat(
+              data.filter(
+                (item) =>
+                  searchCate.includes(item.type) ||
+                  (Array.isArray(item.template) &&
+                    item.template.some((template) =>
+                      searchCate.includes(template)
+                    ))
+              )
+            );
+          });
+        } else {
+          searchCate.forEach((cate) => {
+            tmpData = data.filter(
+              (item) =>
+                searchCate.includes(item.type) &&
+                Array.isArray(item.template) &&
+                item.template.some((template) => searchCate.includes(template))
+            );
+          });
+        }
+
+        if (Search) {
+          const code = Search.toLowerCase().replace(/[^a-z0-9]/g, "");
+          tmpData = tmpData.filter(
+            (item) =>
+              item.code
+                .toLowerCase()
+                .replace(/[^a-z0-9]/g, "")
+                .startsWith(code) || item.type.startsWith(code)
+          );
+        }
+      } else {
+        if (Search) {
+          const code = Search.toLowerCase().replace(/[^a-z0-9]/g, "");
+          tmpData = data.filter(
+            (item) =>
+              item.code
+                .toLowerCase()
+                .replace(/[^a-z0-9]/g, "")
+                .startsWith(code) || item.type.startsWith(code)
+          );
+        }
+      }
+    }
+
+    setIsFound(tmpData.length > 0);
+    setFilteredData(tmpData);
+  }, [Category, Search, searchCate, data]);
+
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
 
-  let filteredData = [];
-
-  if (Category === "new") {
-    filteredData = data.sort((a, b) => b.id - a.id).slice(0, 4);
-  } else if (Category === "intro") {
-    filteredData = data.filter((item) => item.type === "intro");
-  } else if (Category === "outro") {
-    filteredData = data.filter((item) => item.type === "outro");
-  } else if (Category === "music") {
-    filteredData = data.filter((item) => item.type === "music");
-  } else if (Category === "effect") {
-    filteredData = data.filter((item) => item.type === "effect");
-  }
-
   return (
     <div className={cx("wrapper")}>
-      <h3 className={cx("title", "normal-bg", "title-color")}>
+      <h3
+        className={cx(
+          "title",
+          { "normal-bg": Category === "new" },
+          { "intro-bg": Category === "intro" },
+          { "outro-bg": Category === "outro" },
+          { "music-bg": Category === "music" },
+          { "effect-bg": Category === "effect" },
+          { "template-bg": Category === "template" },
+          { "template-bg": Category === "your result" },
+          "title-color"
+        )}
+      >
         {Category.charAt(0).toUpperCase() + Category.slice(1)}
       </h3>
 
-      <Row>
-        {filteredData.map((item, index) => (
-          <div className={cx("col-lg-3", "col-md-6", "my-3")} key={index}>
-            <YouTubeVideoInfo data={item} type={item.type} />
+      {Search ? (
+        isFound ? (
+          <Row>
+            {filteredData.map((item, index) => (
+              <div className={cx("col-lg-3", "col-md-6", "my-3")} key={index}>
+                <YouTubeVideoInfo data={item} type={item.type} code={Search} />
+              </div>
+            ))}
+          </Row>
+        ) : (
+          <div className={cx("not-found", "description-color")}>
+            Your Result Not Found
           </div>
-        ))}
-      </Row>
+        )
+      ) : (
+        <Row>
+          {filteredData.map((item, index) => (
+            <div className={cx("col-lg-3", "col-md-6", "my-3")} key={index}>
+              <YouTubeVideoInfo data={item} type={item.type} code={Search} />
+            </div>
+          ))}
+        </Row>
+      )}
     </div>
   );
 }

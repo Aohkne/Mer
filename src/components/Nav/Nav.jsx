@@ -16,7 +16,7 @@ function Nav({ direction }) {
         })}
       >
         <Link to="/">
-          <img src="/img/home/home-icon.png" alt="home-icon" />
+          <img src="/img/icon/home-icon.png" alt="home-icon" />
         </Link>
       </div>
       <div
@@ -25,17 +25,17 @@ function Nav({ direction }) {
         })}
       >
         <Link to="/template">
-          <img src="/img/home/powerpoint-icon.png" alt="home-icon" />
+          <img src="/img/icon/powerpoint-icon.png" alt="powerpoint-icon" />
         </Link>
       </div>
       <div className={cx("item", { selected: location.pathname === "/guide" })}>
         <Link to="/guide">
-          <img src="/img/home/guide-icon.png" alt="home-icon" />
+          <img src="/img/icon/guide-icon.png" alt="guide-icon" />
         </Link>
       </div>
       <div className={cx("item", { selected: location.pathname === "/info" })}>
         <Link to="/info">
-          <img src="/img/home/info-icon.png" alt="home-icon" />
+          <img src="/img/icon/info-icon.png" alt="info-icon" />
         </Link>
       </div>
     </div>

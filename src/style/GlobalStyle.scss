@@ -22,22 +22,32 @@ html {
 
 //Light theme
 :root {
+  --white: #fff;
+  --black: #000;
+
   //Variable
   --background-color: #e3e3d7;
   --nav-background-color: #1e1f20;
   --icon-item-brightness: 100%;
-  --slider-shadow: #00000040;
+  --shadow-color: #00000040;
 
   --card-bg-color: #000000;
   --card-title-color: #fff;
+
+  --title-color: #fff;
 
   //Classes
   .title-color {
     color: #fff;
   }
+  .description-color {
+    color: #242424;
+  }
+
   .normal-bg {
     background-color: #000000;
   }
+  //Type
   .intro-bg {
     background-color: #6eccf4;
   }
@@ -53,6 +63,23 @@ html {
   .template-bg {
     background-color: #ed7843;
   }
+
+  //Template
+  .hero-bg {
+    background-color: #4b7ec5;
+  }
+
+  .game-bg {
+    background-color: #ee6d38;
+  }
+
+  .anime-bg {
+    background-color: #09b87f;
+  }
+
+  .movie-bg {
+    background-color: #ee4a5b;
+  }
 }
 
 //Dark theme
@@ -61,14 +88,19 @@ html {
   --background-color: #1e1f20;
   --nav-background-color: #fcba30;
   --icon-item-brightness: 0%;
-  --slider-shadow: #fff;
+  --shadow-color: #fff;
 
   --card-bg-color: #fff;
   --card-title-color: #000000;
 
+  --title-color: #242424;
+
   //Classes
   .title-color {
     color: #000000;
+  }
+  .description-color {
+    color: #d2d2d2;
   }
 
   .normal-bg {

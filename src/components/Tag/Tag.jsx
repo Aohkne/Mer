@@ -3,9 +3,13 @@ import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
-function Tag({ type }) {
+function Tag({ type, template }) {
   return (
-    <div className={cx("wrapper", "title-color", `${type}-bg`)}>{type}</div>
+    <div
+      className={cx("wrapper", "title-color", `${type ? type : template}-bg`)}
+    >
+      {type ? type : template}
+    </div>
   );
 }
 
