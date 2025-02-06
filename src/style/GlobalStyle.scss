@@ -28,13 +28,17 @@ html {
   //Variable
   --background-color: #e3e3d7;
   --nav-background-color: #1e1f20;
-  --icon-item-brightness: 100%;
+  --icon-item-brightness-withbg: 100%;
+  --icon-item-brightness-nobg: 0%;
   --shadow-color: #00000040;
 
   --card-bg-color: #000000;
   --card-title-color: #fff;
 
+  --black-btn: #000000;
+  --black-btn-hover: #fff;
   --title-color: #fff;
+  --title-color-hover: #242424;
 
   //Classes
   .title-color {
@@ -80,6 +84,15 @@ html {
   .movie-bg {
     background-color: #ee4a5b;
   }
+
+  //Social media
+  --youtube-color: #ff0033;
+
+  .youtube_container {
+    button {
+      background-color: var(--youtube-color);
+    }
+  }
 }
 
 //Dark theme
@@ -88,12 +101,17 @@ html {
   --background-color: #1e1f20;
   --nav-background-color: #fcba30;
   --icon-item-brightness: 0%;
+  --icon-item-brightness-nobg: 100%;
+
   --shadow-color: #fff;
 
   --card-bg-color: #fff;
   --card-title-color: #000000;
 
+  --black-btn: #fff;
+  --black-btn-hover: #000000;
   --title-color: #242424;
+  --title-color-hover: #fff;
 
   //Classes
   .title-color {

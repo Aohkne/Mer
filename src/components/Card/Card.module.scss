@@ -33,7 +33,7 @@
         img {
           width: 20px;
           margin-right: 5px;
-          filter: brightness(var(--icon-item-brightness));
+          filter: brightness(var(--icon-item-brightness-withbg));
         }
         .like-icon {
           width: 15px;

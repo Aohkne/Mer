@@ -21,7 +21,7 @@ function Nav({ direction }) {
       </div>
       <div
         className={cx("item", {
-          selected: location.pathname === "/template",
+          selected: location.pathname.startsWith("/template"),
         })}
       >
         <Link to="/template">
