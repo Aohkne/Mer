@@ -1,10 +1,18 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import {
+  EmailShareButton,
+  FacebookShareButton,
+  TelegramShareButton,
+  ThreadsShareButton,
+  LinkedinShareButton,
+} from "react-share";
 
 import Nav from "../../components/Nav/Nav";
 import styles from "./TemplateDetail.module.scss";
 import classNames from "classnames/bind";
 import Tag from "../../components/Tag/Tag";
+import Category from "../../layouts/Category/Category";
 
 const cx = classNames.bind(styles);
 
@@ -12,6 +20,8 @@ function TemplateDetail({ data }) {
   const [videoInfo, setVideoInfo] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const [isSharePopupVisible, setIsSharePopupVisible] = useState(false);
 
   const videoId = data.youtube.split("v=")[1].split("&")[0];
 
@@ -47,6 +57,10 @@ function TemplateDetail({ data }) {
   if (!videoInfo) return <p>No video information available.</p>;
 
   const { snippet, statistics } = videoInfo;
+
+  const toggleSharePopup = () => {
+    setIsSharePopupVisible(!isSharePopupVisible);
+  };
 
   return (
     <div className={cx("wrapper")}>
@@ -103,11 +117,71 @@ function TemplateDetail({ data }) {
             <button className={cx("download-btn", "w-100")}>DOWNLOAD</button>
 
             <div className={cx("link-btn")}>
-              <button className={cx("share-btn")}>
+              <button className={cx("share-btn")} onClick={toggleSharePopup}>
                 <Link to={""}>
                   <img src="/img/icon/share-icon.png" alt="share-icon" />
                   Share
                 </Link>
+
+                {isSharePopupVisible && (
+                  <div className={cx("share-popup")}>
+                    <div className={cx("share-popup-title")}>
+                      Share this template
+                    </div>
+
+                    <div className={cx("share-icon-list")}>
+                      <div className={cx("share-item")}>
+                        <FacebookShareButton url={data.youtube}>
+                          <img
+                            src="/img/icon/facebook-icon.png"
+                            alt="facebook"
+                            className={cx("share-icon")}
+                          />
+                        </FacebookShareButton>
+                      </div>
+
+                      <div className={cx("share-item")}>
+                        <EmailShareButton url={data.youtube}>
+                          <img
+                            src="/img/icon/gmail-icon.png"
+                            alt="email"
+                            className={cx("share-icon")}
+                          />
+                        </EmailShareButton>
+                      </div>
+
+                      <div className={cx("share-item")}>
+                        <TelegramShareButton url={data.youtube}>
+                          <img
+                            src="/img/icon/instapaper-icon.png"
+                            alt="telegram"
+                            className={cx("share-icon")}
+                          />
+                        </TelegramShareButton>
+                      </div>
+
+                      <div className={cx("share-item")}>
+                        <ThreadsShareButton url={data.youtube}>
+                          <img
+                            src="/img/icon/threads-icon.png"
+                            alt="threads"
+                            className={cx("share-icon")}
+                          />
+                        </ThreadsShareButton>
+                      </div>
+
+                      <div className={cx("share-item")}>
+                        <LinkedinShareButton url={data.youtube}>
+                          <img
+                            src="/img/icon/linkedin-icon.png"
+                            alt="linkedin"
+                            className={cx("share-icon")}
+                          />
+                        </LinkedinShareButton>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </button>
 
               <button className={cx("youtube-btn")}>
@@ -119,6 +193,10 @@ function TemplateDetail({ data }) {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className={cx("related_contaianer")}>
+        <Category Category={"relate"} relateCate={data.type} />
       </div>
     </div>
   );

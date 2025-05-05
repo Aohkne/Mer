@@ -8,7 +8,7 @@ import { Row } from "react-bootstrap";
 
 const cx = classNames.bind(styles);
 
-function Category({ Category, Search, searchCate }) {
+function Category({ Category, Search, searchCate, relateCate }) {
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [isFound, setIsFound] = useState(false);
@@ -38,6 +38,9 @@ function Category({ Category, Search, searchCate }) {
 
     if (!Search && !searchCate) {
       switch (Category) {
+        case "relate":
+          tmpData = data.filter((item) => item.type === relateCate).slice(0, 4);
+          break;
         case "new":
           tmpData = data.sort((a, b) => b.id - a.id).slice(0, 4);
           break;
@@ -113,6 +116,7 @@ function Category({ Category, Search, searchCate }) {
       <h3
         className={cx(
           "title",
+          { "normal-bg": Category === "relate" },
           { "normal-bg": Category === "new" },
           { "intro-bg": Category === "intro" },
           { "outro-bg": Category === "outro" },

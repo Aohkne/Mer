@@ -108,6 +108,40 @@
           }
         }
 
+        .share-btn {
+          position: relative;
+
+          .share-popup {
+            position: absolute;
+            top: 150%;
+            left: 0;
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 10px 20px;
+          }
+
+          .share-icon-list {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 20px 0;
+            border-top: 1px solid var(--gray);
+
+            .share-item {
+              padding: 5px;
+              border: 1px solid var(--black);
+              border-radius: 50%;
+              height: 35px;
+              width: 35px;
+
+              .share-icon {
+                height: 30 px;
+                width: 30px;
+              }
+            }
+          }
+        }
+
         .youtube-btn {
           flex: 1;
 

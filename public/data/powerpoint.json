@@ -166,5 +166,12 @@
     "type": "intro",
     "img": "/img/template/intro/nham-mat.png",
     "youtube": "https://www.youtube.com/watch?v=1zAQxIekML4"
+  },
+  {
+    "id": 24,
+    "code": "poke",
+    "type": "intro",
+    "img": "/img/template/intro/poke.png",
+    "youtube": "https://www.youtube.com/watch?v=FoPMJ7B72P8"
   }
 ]
