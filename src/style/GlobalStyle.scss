@@ -33,13 +33,19 @@ html {
   --icon-item-brightness-nobg: 0%;
   --shadow-color: #00000040;
 
+  //Opposite
   --card-bg-color: #000000;
   --card-title-color: #fff;
+
+  //Same
+  --card-bg: #f8f8f8;
+  --card-title: #242424;
 
   --black-btn: #000000;
   --black-btn-hover: #fff;
   --title-color: #fff;
   --title-color-hover: #242424;
+  --border-color: #111111;
 
   //Classes
   .title-color {
@@ -106,13 +112,19 @@ html {
 
   --shadow-color: #fff;
 
+  // Opposite
   --card-bg-color: #fff;
   --card-title-color: #000000;
+
+  //Same
+  --card-bg: #242424;
+  --card-title: #d2d2d2;
 
   --black-btn: #fff;
   --black-btn-hover: #000000;
   --title-color: #242424;
   --title-color-hover: #fff;
+  --border-color: #d2d2d2;
 
   //Classes
   .title-color {

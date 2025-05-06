@@ -1,4 +1,5 @@
 .wrapper {
+  position: relative;
   margin: 0 15px;
 
   .img {
@@ -108,40 +109,6 @@
           }
         }
 
-        .share-btn {
-          position: relative;
-
-          .share-popup {
-            position: absolute;
-            top: 150%;
-            left: 0;
-            background-color: var(--white);
-            border-radius: 15px;
-            padding: 10px 20px;
-          }
-
-          .share-icon-list {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            padding: 20px 0;
-            border-top: 1px solid var(--gray);
-
-            .share-item {
-              padding: 5px;
-              border: 1px solid var(--black);
-              border-radius: 50%;
-              height: 35px;
-              width: 35px;
-
-              .share-icon {
-                height: 30 px;
-                width: 30px;
-              }
-            }
-          }
-        }
-
         .youtube-btn {
           flex: 1;
 
@@ -154,6 +121,87 @@
             a {
               color: var(--youtube-color);
             }
+          }
+        }
+      }
+    }
+  }
+}
+.share-popup-contaiainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .share-popup {
+    position: relative;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 10px 20px 20px;
+
+    .share-popup-title {
+      padding: 10px 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: left;
+      color: var(--card-title);
+    }
+
+    .share-popup-subtitle {
+      padding: 10px 0;
+      font-size: 2rem;
+      font-weight: 500;
+      text-align: left;
+      color: var(--card-title);
+    }
+
+    .share-content {
+      border-top: 1px solid var(--gray);
+
+      .share-icon-list {
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+
+        .share-item {
+          margin: 0 15px;
+          display: flex;
+          align-self: center;
+          justify-content: center;
+        }
+      }
+    }
+
+    .share-copy {
+      .copy-link-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 5px;
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+
+        .copy-link-input {
+          color: var(--card-title);
+          flex: 1;
+          font-size: 1.6rem;
+          border: none;
+          outline: none;
+          background-color: transparent;
+        }
+
+        .copy-icon {
+          margin: auto 5px;
+          color: var(--card-title);
+          cursor: pointer;
+
+          &.copied {
+            color: green;
           }
         }
       }

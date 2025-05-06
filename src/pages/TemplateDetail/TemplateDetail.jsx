@@ -8,6 +8,15 @@ import {
   LinkedinShareButton,
 } from "react-share";
 
+import {
+  FacebookIcon,
+  EmailIcon,
+  TelegramIcon,
+  ThreadsIcon,
+  LinkedinIcon,
+} from "react-share";
+import { Check, Copy } from "lucide-react";
+
 import Nav from "../../components/Nav/Nav";
 import styles from "./TemplateDetail.module.scss";
 import classNames from "classnames/bind";
@@ -22,6 +31,7 @@ function TemplateDetail({ data }) {
   const [error, setError] = useState(null);
 
   const [isSharePopupVisible, setIsSharePopupVisible] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   const videoId = data.youtube.split("v=")[1].split("&")[0];
 
@@ -58,8 +68,17 @@ function TemplateDetail({ data }) {
 
   const { snippet, statistics } = videoInfo;
 
-  const toggleSharePopup = () => {
+  // OPEN SHARE POPUP
+  const toggleSharePopup = (e) => {
     setIsSharePopupVisible(!isSharePopupVisible);
+    e.stopPropagation();
+  };
+
+  // COPY LINK
+  const copyLink = () => {
+    navigator.clipboard.writeText(data.youtube);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
@@ -122,67 +141,83 @@ function TemplateDetail({ data }) {
                   <img src="/img/icon/share-icon.png" alt="share-icon" />
                   Share
                 </Link>
+              </button>
 
-                {isSharePopupVisible && (
-                  <div className={cx("share-popup")}>
+              {isSharePopupVisible && (
+                <div
+                  className={cx("share-popup-contaiainer")}
+                  onClick={() => setIsSharePopupVisible(false)}
+                >
+                  <div
+                    className={cx("share-popup")}
+                    onClick={(e) => e.stopPropagation()}
+                  >
                     <div className={cx("share-popup-title")}>
                       Share this template
                     </div>
 
-                    <div className={cx("share-icon-list")}>
-                      <div className={cx("share-item")}>
-                        <FacebookShareButton url={data.youtube}>
-                          <img
-                            src="/img/icon/facebook-icon.png"
-                            alt="facebook"
-                            className={cx("share-icon")}
-                          />
-                        </FacebookShareButton>
+                    <div className={cx("share-content")}>
+                      <div className={cx("share-popup-subtitle")}>
+                        Share this link via
+                      </div>
+                      <div className={cx("share-icon-list")}>
+                        <div className={cx("share-item")}>
+                          <FacebookShareButton url={data.youtube}>
+                            <FacebookIcon size={45} round={true} />
+                          </FacebookShareButton>
+                        </div>
+
+                        <div className={cx("share-item")}>
+                          <EmailShareButton url={data.youtube}>
+                            <EmailIcon size={45} round={true} />
+                          </EmailShareButton>
+                        </div>
+
+                        <div className={cx("share-item")}>
+                          <TelegramShareButton url={data.youtube}>
+                            <TelegramIcon size={45} round={true} />
+                          </TelegramShareButton>
+                        </div>
+
+                        <div className={cx("share-item")}>
+                          <ThreadsShareButton url={data.youtube}>
+                            <ThreadsIcon size={45} round={true} />
+                          </ThreadsShareButton>
+                        </div>
+
+                        <div className={cx("share-item")}>
+                          <LinkedinShareButton url={data.youtube}>
+                            <LinkedinIcon size={45} round={true} />
+                          </LinkedinShareButton>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className={cx("share-copy")}>
+                      <div className={cx("share-popup-subtitle")}>
+                        Or copy link
                       </div>
 
-                      <div className={cx("share-item")}>
-                        <EmailShareButton url={data.youtube}>
-                          <img
-                            src="/img/icon/gmail-icon.png"
-                            alt="email"
-                            className={cx("share-icon")}
+                      <div className={cx("copy-link-container")}>
+                        <input
+                          type="text"
+                          value={data.youtube}
+                          readOnly
+                          className={cx("copy-link-input")}
+                        />
+                        {copied ? (
+                          <Check className={cx("copy-icon", "copied")} />
+                        ) : (
+                          <Copy
+                            onClick={copyLink}
+                            className={cx("copy-icon")}
                           />
-                        </EmailShareButton>
-                      </div>
-
-                      <div className={cx("share-item")}>
-                        <TelegramShareButton url={data.youtube}>
-                          <img
-                            src="/img/icon/instapaper-icon.png"
-                            alt="telegram"
-                            className={cx("share-icon")}
-                          />
-                        </TelegramShareButton>
-                      </div>
-
-                      <div className={cx("share-item")}>
-                        <ThreadsShareButton url={data.youtube}>
-                          <img
-                            src="/img/icon/threads-icon.png"
-                            alt="threads"
-                            className={cx("share-icon")}
-                          />
-                        </ThreadsShareButton>
-                      </div>
-
-                      <div className={cx("share-item")}>
-                        <LinkedinShareButton url={data.youtube}>
-                          <img
-                            src="/img/icon/linkedin-icon.png"
-                            alt="linkedin"
-                            className={cx("share-icon")}
-                          />
-                        </LinkedinShareButton>
+                        )}
                       </div>
                     </div>
                   </div>
-                )}
-              </button>
+                </div>
+              )}
 
               <button className={cx("youtube-btn")}>
                 <Link to={data.youtube} target="blank">
