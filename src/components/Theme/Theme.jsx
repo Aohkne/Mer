@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./Theme.module.scss";
 import classNames from "classnames/bind";
+import { Moon, Sun } from "lucide-react";
 
 const cx = classNames.bind(styles);
 
@@ -32,17 +33,11 @@ function Theme() {
   return (
     <div className={cx("wrapper")}>
       <div className={cx("theme")} onClick={darkModeHandle}>
-        <img
-          src={isDark ? "img/theme/moon-darkMode.png" : "img/theme/moon.png"}
-          alt="moon"
-        />
+        <Moon size={30} />
       </div>
 
       <div className={cx("theme")} onClick={lightModeHandle}>
-        <img
-          src={isDark ? "img/theme/sun-darkMode.png" : "img/theme/sun.png"}
-          alt="sun"
-        />
+        <Sun size={30} />
       </div>
     </div>
   );

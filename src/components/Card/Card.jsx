@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./Card.module.scss";
 import classNames from "classnames/bind";
 import Tag from "../Tag/Tag";
+import { Eye, ThumbsUp } from "lucide-react";
 
 const cx = classNames.bind(styles);
 
@@ -37,20 +38,12 @@ function Card({ data, title, type, template, view, like }) {
               )}
             >
               <div className={cx("info-content")}>
-                <img
-                  src="/img/detail/view-icon.png"
-                  alt="view-icon"
-                  className={cx("view-icon")}
-                />
+                <Eye size={25} className={cx("me-2")} />
                 {view}
               </div>
 
               <div className={cx("info-content")}>
-                <img
-                  src="/img/detail/like-icon.png"
-                  alt="like-icon"
-                  className={cx("like-icon")}
-                />
+                <ThumbsUp size={20} className={cx("me-2")} />
                 {like}
               </div>
             </div>

@@ -2,58 +2,66 @@
   {
     "id": 1,
     "code": "tam-giac-▲",
-    "type": "intro",
+    "type": "outro",
     "img": "/img/template/outro/tam-giac.png",
-    "youtube": "https://www.youtube.com/watch?v=k5L8QcgiJq4"
+    "youtube": "https://www.youtube.com/watch?v=k5L8QcgiJq4",
+    "download": "/powerpoint/outro/tam giác.zip"
   },
   {
     "id": 2,
     "code": "u-oa",
     "type": "intro",
     "img": "/img/template/intro/u-oa.png",
-    "youtube": "https://www.youtube.com/watch?v=Ak5l2NLjCVo"
+    "youtube": "https://www.youtube.com/watch?v=Ak5l2NLjCVo",
+    "download": "/powerpoint/intro/u-oa.zip"
   },
   {
     "id": 3,
     "code": "2012_2022",
     "type": "music",
     "img": "/img/template/music/2012_2022.png",
-    "youtube": "https://www.youtube.com/watch?v=iq9HSLWkO3c"
+    "youtube": "https://www.youtube.com/watch?v=iq9HSLWkO3c",
+    "download": "/powerpoint/music/2012-2022.zip"
   },
   {
     "id": 4,
     "code": "o-dong-dat",
     "type": "intro",
     "img": "/img/template/intro/o-dong-dat.png",
-    "youtube": "https://www.youtube.com/watch?v=Zs1bcFqLsjA"
+    "youtube": "https://www.youtube.com/watch?v=Zs1bcFqLsjA",
+    "download": "/powerpoint/intro/Ơ động đất à.zip"
   },
   {
     "id": 5,
     "code": "thuoc-phim",
     "type": "intro",
     "img": "/img/template/intro/thuoc-phim.png",
-    "youtube": "https://www.youtube.com/watch?v=0z2igwyg-yA"
+    "youtube": "https://www.youtube.com/watch?v=0z2igwyg-yA",
+    "download": "/powerpoint/intro/Buồn ko thể buông.zip"
   },
   {
     "id": 6,
     "code": "ak",
     "type": "intro",
     "img": "/img/template/intro/ak.png",
-    "youtube": "https://www.youtube.com/watch?v=TKYKVS1KMpY"
+    "youtube": "https://www.youtube.com/watch?v=TKYKVS1KMpY",
+    "download": "/powerpoint/intro/AK.zip"
   },
   {
     "id": 7,
     "code": "sinh-ra-duoc-bao-boc",
     "type": "intro",
     "img": "/img/template/intro/sinh-ra-duoc-bao-boc.png",
-    "youtube": "https://www.youtube.com/watch?v=XzeSxmaZvSU"
+    "youtube": "https://www.youtube.com/watch?v=XzeSxmaZvSU",
+    "download": "/powerpoint/intro/Sinh ra được bao bọc.zip"
   },
   {
     "id": 8,
     "code": "co-dont-coi",
     "type": "music",
     "img": "/img/template/music/co-dont-coi.png",
-    "youtube": "https://www.youtube.com/watch?v=trVDK7Wucl8"
+    "youtube": "https://www.youtube.com/watch?v=trVDK7Wucl8",
+    "download": "/powerpoint/music/Co don't coi.zip"
   },
   {
     "id": 9,
@@ -61,14 +69,16 @@
     "type": "intro",
     "template": ["hero"],
     "img": "/img/template/intro/sieu-nhan.png",
-    "youtube": "https://www.youtube.com/watch?v=rShrYMYtGH0"
+    "youtube": "https://www.youtube.com/watch?v=rShrYMYtGH0",
+    "download": "/powerpoint/intro/siêu nhân cuồng phong.zip"
   },
   {
     "id": 10,
     "code": "dam-tinh",
     "type": "music",
     "img": "/img/template/music/dam-tinh.png",
-    "youtube": "https://www.youtube.com/watch?v=jcjLxYI8OtM"
+    "youtube": "https://www.youtube.com/watch?v=jcjLxYI8OtM",
+    "download": "/powerpoint/music/Đắm Tình.zip"
   },
   {
     "id": 11,
@@ -76,7 +86,8 @@
     "type": "intro",
     "template": ["anime"],
     "img": "/img/template/intro/mot-mieng.png",
-    "youtube": "https://www.youtube.com/watch?v=HSmMsq91aWA"
+    "youtube": "https://www.youtube.com/watch?v=HSmMsq91aWA",
+    "download": "/powerpoint/intro/one piece.zip"
   },
   {
     "id": 12,
@@ -84,7 +95,8 @@
     "type": "intro",
     "template": ["movie"],
     "img": "/img/template/intro/inside.png",
-    "youtube": "https://www.youtube.com/watch?v=EjX3-cI88WU"
+    "youtube": "https://www.youtube.com/watch?v=EjX3-cI88WU",
+    "download": "/powerpoint/intro/Inside.zip"
   },
   {
     "id": 13,
@@ -92,7 +104,8 @@
     "type": "intro",
     "template": ["anime", "game"],
     "img": "/img/template/intro/genshin.png",
-    "youtube": "https://www.youtube.com/watch?v=jyBVjqhvxRU"
+    "youtube": "https://www.youtube.com/watch?v=jyBVjqhvxRU",
+    "download": "/powerpoint/intro/genshin.zip"
   },
   {
     "id": 14,
@@ -100,7 +113,8 @@
     "type": "outro",
     "template": ["anime"],
     "img": "/img/template/outro/mot-mieng-2.png",
-    "youtube": "https://www.youtube.com/watch?v=bIn3Yqj61L0"
+    "youtube": "https://www.youtube.com/watch?v=bIn3Yqj61L0",
+    "download": "/powerpoint/outro/senbonzakur.zip"
   },
   {
     "id": 15,
@@ -108,7 +122,8 @@
     "type": "intro",
     "template": ["game"],
     "img": "/img/template/intro/valorant.png",
-    "youtube": "https://www.youtube.com/watch?v=qaWTEY3GV8E"
+    "youtube": "https://www.youtube.com/watch?v=qaWTEY3GV8E",
+    "download": "/powerpoint/intro/valorant.zip"
   },
   {
     "id": 16,
@@ -116,62 +131,71 @@
     "type": "outro",
     "template": ["movie"],
     "img": "/img/template/outro/minh-a.png",
-    "youtube": "https://www.youtube.com/watch?v=KPXFLSJ9ZVA"
+    "youtube": "https://www.youtube.com/watch?v=KPXFLSJ9ZVA",
+    "download": "/powerpoint/outro/Mình à.zip"
   },
   {
     "id": 17,
     "code": "chim-soul",
     "type": "music",
     "img": "/img/template/music/chim-soul.png",
-    "youtube": "https://www.youtube.com/watch?v=HrXKFsJD0Wk"
+    "youtube": "https://www.youtube.com/watch?v=HrXKFsJD0Wk",
+    "download": "/powerpoint/music/chìm sâu.zip"
   },
   {
     "id": 18,
     "code": "ai-banh",
     "type": "intro",
     "img": "/img/template/intro/ai-banh.png",
-    "youtube": "https://www.youtube.com/watch?v=F5PsheY_9FY"
+    "youtube": "https://www.youtube.com/watch?v=F5PsheY_9FY",
+    "download": "/powerpoint/intro/Ai Bảnh.zip"
   },
   {
     "id": 19,
     "code": "c-chua",
     "type": "music",
     "img": "/img/template/music/c-chua.png",
-    "youtube": "https://www.youtube.com/watch?v=Db65VyLBnUw"
+    "youtube": "https://www.youtube.com/watch?v=Db65VyLBnUw",
+    "download": "/powerpoint/music/C chưa.zip"
   },
   {
     "id": 20,
     "code": "tabu",
     "type": "intro",
     "img": "/img/template/intro/tabu.png",
-    "youtube": "https://www.youtube.com/watch?v=zXBjgNiOx44"
+    "youtube": "https://www.youtube.com/watch?v=zXBjgNiOx44",
+    "download": "/powerpoint/intro/tabu.zip"
   },
   {
     "id": 21,
     "code": "brand",
     "type": "intro",
     "img": "/img/template/intro/brand.png",
-    "youtube": "https://www.youtube.com/watch?v=LiuO9ez2odg"
+    "youtube": "https://www.youtube.com/watch?v=LiuO9ez2odg",
+    "download": "/powerpoint/intro/brand.zip"
   },
   {
     "id": 22,
     "code": "chart",
     "type": "effect",
     "img": "/img/template/effect/chart.png",
-    "youtube": "https://www.youtube.com/watch?v=_IqmMd-Kn5Y"
+    "youtube": "https://www.youtube.com/watch?v=_IqmMd-Kn5Y",
+    "download": "/powerpoint/effect/Chart Effect.zip"
   },
   {
     "id": 23,
     "code": "nham-mat",
     "type": "intro",
     "img": "/img/template/intro/nham-mat.png",
-    "youtube": "https://www.youtube.com/watch?v=1zAQxIekML4"
+    "youtube": "https://www.youtube.com/watch?v=1zAQxIekML4",
+    "download": "/powerpoint/intro/nhắm mắt.zip"
   },
   {
     "id": 24,
     "code": "poke",
     "type": "intro",
     "img": "/img/template/intro/poke.png",
-    "youtube": "https://www.youtube.com/watch?v=FoPMJ7B72P8"
+    "youtube": "https://www.youtube.com/watch?v=FoPMJ7B72P8",
+    "download": "/powerpoint/intro/Poke.zip"
   }
 ]

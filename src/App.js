@@ -1,7 +1,9 @@
+import Control from "./components/Control/Control";
+
 import HomePage from "./pages/Home/Home";
 import Template from "./pages/Template/Template";
-import Control from "./components/Control/Control";
 import TemplateDetail from "./pages/TemplateDetail/TemplateDetail";
+import Guide from "./pages/Guide/Guide";
 
 import "./style/GlobalStyle.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -44,7 +46,7 @@ function App() {
             element={<TemplateDetail data={e} />}
           />
         ))}
-        {/* <Route path="/guide" element={<PricingPage />} /> */}
+        <Route path="/guide" element={<Guide />} />
         {/* <Route path="/info" element={<GuidePage />} /> */}
       </Routes>
 

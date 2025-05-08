@@ -15,7 +15,8 @@ import {
   ThreadsIcon,
   LinkedinIcon,
 } from "react-share";
-import { Check, Copy } from "lucide-react";
+
+import { Check, CircleAlert, Copy, Eye, ThumbsUp, X } from "lucide-react";
 
 import Nav from "../../components/Nav/Nav";
 import styles from "./TemplateDetail.module.scss";
@@ -78,7 +79,7 @@ function TemplateDetail({ data }) {
   const copyLink = () => {
     navigator.clipboard.writeText(data.youtube);
     setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    setTimeout(() => setCopied(false), 1000);
   };
 
   return (
@@ -87,9 +88,22 @@ function TemplateDetail({ data }) {
 
       <div className={cx("row")}>
         <div
-          className={cx("img", "col-xl-8", "col-lg-8", "col-md-8", "col-sm-12")}
+          className={cx(
+            "video-container",
+            "col-xl-8",
+            "col-lg-8",
+            "col-md-7",
+            "col-sm-12"
+          )}
         >
-          <img src={data.img} alt={data.code} />
+          <iframe
+            width="100%"
+            height="100%"
+            src={data.youtube.replace("watch?v=", "embed/")}
+            title={data.code}
+            allow="accelerometer; autoplay; encrypted-media; gyroscope;"
+            allowFullScreen
+          ></iframe>
         </div>
 
         <div
@@ -97,7 +111,7 @@ function TemplateDetail({ data }) {
             "content",
             "col-xl-4",
             "col-lg-4",
-            "col-md-4",
+            "col-md-5",
             "col-sm-12"
           )}
         >
@@ -114,26 +128,38 @@ function TemplateDetail({ data }) {
 
           <div className={cx("info")}>
             <div className={cx("info-content", "description-color")}>
-              <img
-                src="/img/detail/view-icon.png"
-                alt="view-icon"
-                className={cx("view-icon")}
-              />
+              <Eye size={32} />
               {statistics.viewCount}
             </div>
 
             <div className={cx("info-content", "description-color")}>
-              <img
-                src="/img/detail/like-icon.png"
-                alt="like-icon"
-                className={cx("like-icon")}
-              />
+              <ThumbsUp size={25} />
               {statistics.likeCount}
             </div>
           </div>
 
           <div className={cx("action")}>
-            <button className={cx("download-btn", "w-100")}>DOWNLOAD</button>
+            <div className={cx("download-container")}>
+              {statistics.likeCount >= 20 ? (
+                <a
+                  className={cx("download-btn", "w-100")}
+                  href={encodeURI(data.download)}
+                  download={data.code + ".zip"}
+                >
+                  DOWNLOAD
+                </a>
+              ) : (
+                <>
+                  <div className={cx("download-msg")}>
+                    <CircleAlert />
+                    This video is yet to reach 20 likes
+                  </div>
+                  <button className={cx("download-btn", "disabled", "w-100")}>
+                    DOWNLOAD
+                  </button>
+                </>
+              )}
+            </div>
 
             <div className={cx("link-btn")}>
               <button className={cx("share-btn")} onClick={toggleSharePopup}>
@@ -154,6 +180,7 @@ function TemplateDetail({ data }) {
                   >
                     <div className={cx("share-popup-title")}>
                       Share this template
+                      <X onClick={() => setIsSharePopupVisible(false)} />
                     </div>
 
                     <div className={cx("share-content")}>
