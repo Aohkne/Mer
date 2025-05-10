@@ -41,15 +41,6 @@ html {
   //Mer
   --bot-shawdow-color: #44dedd;
 
-  // --bot-shawdow-color: linear-gradient(
-  //   360deg,
-  //   #44dedd,
-  //   #9fe18e,
-  //   #fbc657,
-  //   #fa9d5d,
-  //   #d485da
-  // );
-
   //Opposite
   --card-bg-color: #000000;
   --card-title-color: #fff;
@@ -122,6 +113,18 @@ html {
 
   //Social media
   --youtube-color: #ff0033;
+  --tiktok-color: #000000;
+  --facebook-color: #1877f2;
+  --github-color: #000000;
+  --gmail-color: linear-gradient(
+    90deg,
+    #0085f7 22%,
+    #e51c19 31%,
+    #ff4131 61%,
+    #ff4131 74%,
+    #ffbc00 81%,
+    #00a94b 100%
+  );
 
   .youtube_container {
     button {

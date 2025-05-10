@@ -10,6 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import { Routes, Route, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Info from "./pages/Info/Info";
 
 function App() {
   const [templateDetail, setTemplateDetail] = useState([]);
@@ -47,7 +48,7 @@ function App() {
           />
         ))}
         <Route path="/guide" element={<Guide />} />
-        {/* <Route path="/info" element={<GuidePage />} /> */}
+        <Route path="/info" element={<Info />} />
       </Routes>
 
       <Control />

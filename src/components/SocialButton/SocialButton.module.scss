@@ -1,0 +1,94 @@
+.wrapper {
+  margin: 10px 0;
+
+  .name-container {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .btn-container {
+    margin: 2px auto 0;
+    padding: 10px 0;
+    border-radius: 5px;
+    border: 1px solid var(--black);
+    background-color: var(--white);
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 5px var(--shadow-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      &.youtube {
+        background-color: var(--youtube-color);
+      }
+      &.tiktok {
+        background-color: var(--tiktok-color);
+      }
+      &.facebook {
+        background-color: var(--facebook-color);
+      }
+      &.github {
+        background-color: var(--github-color);
+      }
+      &.gmail {
+        background-color: var(--black);
+      }
+
+      img {
+        filter: drop-shadow(0 0 2px var(--shadow-icon));
+        padding: 2px;
+        border-radius: 5px;
+        background-color: var(--white);
+      }
+
+      .btn-text {
+        &.youtube,
+        &.tiktok,
+        &.facebook,
+        &.github {
+          color: var(--white);
+        }
+        &.gmail {
+          color: var(--white);
+          background: none;
+          -webkit-background-clip: unset;
+          -webkit-text-fill-color: unset;
+        }
+      }
+    }
+
+    img {
+      transition: all 0.3s ease-in-out;
+      height: auto;
+      width: 35px;
+    }
+
+    .btn-text {
+      font-size: 2rem;
+      text-transform: capitalize;
+      font-weight: bold;
+      margin-left: 10px;
+
+      &.youtube {
+        color: var(--youtube-color);
+      }
+      &.tiktok {
+        color: var(--tiktok-color);
+      }
+      &.facebook {
+        color: var(--facebook-color);
+      }
+      &.github {
+        color: var(--github-color);
+      }
+      &.gmail {
+        background: var(--gmail-color);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+}

@@ -7,9 +7,9 @@ const cx = classNames.bind(styles);
 
 function Carosel() {
   const images = [
-    { src: "img/icon/slider_1.png", alt: "slider_1" },
-    { src: "img/icon/slider_1.png", alt: "slider_2" },
-    { src: "img/icon/slider_1.png", alt: "slider_2" },
+    { src: "img/slider/slider_1.png", alt: "slider_1" },
+    { src: "img/slider/slider_1.png", alt: "slider_2" },
+    { src: "img/slider/slider_1.png", alt: "slider_2" },
   ];
 
   return (

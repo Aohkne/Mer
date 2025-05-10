@@ -1,0 +1,37 @@
+.wrapper {
+  padding: 0 10px;
+  margin: 0 20px;
+
+  display: flex;
+  align-self: center;
+  justify-content: space-around;
+
+  @media (max-width: 992px) {
+    padding: 0;
+    margin: 10px 0;
+  }
+
+  .subcriber,
+  .view {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-weight: 300;
+    font-size: 3rem;
+
+    @media (max-width: 992px) {
+      margin: 0 30px;
+      font-size: 2.5rem;
+    }
+
+    @media (max-width: 768px) {
+      margin: 0 20px;
+      font-size: 2rem;
+    }
+
+    span {
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+}
