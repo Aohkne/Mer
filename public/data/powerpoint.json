@@ -2,6 +2,7 @@
   {
     "id": 1,
     "code": "tam-giac-▲",
+    "name": "Tam Giác ▲",
     "type": "outro",
     "img": "/img/template/outro/tam-giac.png",
     "youtube": "https://www.youtube.com/watch?v=k5L8QcgiJq4",
@@ -10,6 +11,7 @@
   {
     "id": 2,
     "code": "u-oa",
+    "name": "Ú oà",
     "type": "intro",
     "img": "/img/template/intro/u-oa.png",
     "youtube": "https://www.youtube.com/watch?v=Ak5l2NLjCVo",
@@ -18,6 +20,7 @@
   {
     "id": 3,
     "code": "2012_2022",
+    "name": "2012_2022",
     "type": "music",
     "img": "/img/template/music/2012_2022.png",
     "youtube": "https://www.youtube.com/watch?v=iq9HSLWkO3c",
@@ -26,6 +29,7 @@
   {
     "id": 4,
     "code": "o-dong-dat",
+    "name": "Ơ động đất",
     "type": "intro",
     "img": "/img/template/intro/o-dong-dat.png",
     "youtube": "https://www.youtube.com/watch?v=Zs1bcFqLsjA",
@@ -34,6 +38,7 @@
   {
     "id": 5,
     "code": "thuoc-phim",
+    "name": "Thước Phim🎬",
     "type": "intro",
     "img": "/img/template/intro/thuoc-phim.png",
     "youtube": "https://www.youtube.com/watch?v=0z2igwyg-yA",
@@ -42,6 +47,7 @@
   {
     "id": 6,
     "code": "ak",
+    "name": "AK",
     "type": "intro",
     "img": "/img/template/intro/ak.png",
     "youtube": "https://www.youtube.com/watch?v=TKYKVS1KMpY",
@@ -50,6 +56,7 @@
   {
     "id": 7,
     "code": "sinh-ra-duoc-bao-boc",
+    "name": "Sinh ra được bao bọc",
     "type": "intro",
     "img": "/img/template/intro/sinh-ra-duoc-bao-boc.png",
     "youtube": "https://www.youtube.com/watch?v=XzeSxmaZvSU",
@@ -58,6 +65,7 @@
   {
     "id": 8,
     "code": "co-dont-coi",
+    "name": "Co Don't coi",
     "type": "music",
     "img": "/img/template/music/co-dont-coi.png",
     "youtube": "https://www.youtube.com/watch?v=trVDK7Wucl8",
@@ -66,6 +74,7 @@
   {
     "id": 9,
     "code": "sieu-nhan",
+    "name": "Siêu Nhân",
     "type": "intro",
     "template": ["hero"],
     "img": "/img/template/intro/sieu-nhan.png",
@@ -75,6 +84,7 @@
   {
     "id": 10,
     "code": "dam-tinh",
+    "name": "Đắm Tình",
     "type": "music",
     "img": "/img/template/music/dam-tinh.png",
     "youtube": "https://www.youtube.com/watch?v=jcjLxYI8OtM",
@@ -83,6 +93,7 @@
   {
     "id": 11,
     "code": "mot-mieng",
+    "name": "Một Miếng",
     "type": "intro",
     "template": ["anime"],
     "img": "/img/template/intro/mot-mieng.png",
@@ -92,6 +103,7 @@
   {
     "id": 12,
     "code": "inside",
+    "name": "Inside",
     "type": "intro",
     "template": ["movie"],
     "img": "/img/template/intro/inside.png",
@@ -101,6 +113,7 @@
   {
     "id": 13,
     "code": "genshin",
+    "name": "Genshin",
     "type": "intro",
     "template": ["anime", "game"],
     "img": "/img/template/intro/genshin.png",
@@ -110,6 +123,7 @@
   {
     "id": 14,
     "code": "mot-mieng-2",
+    "name": "Một Miếng 2",
     "type": "outro",
     "template": ["anime"],
     "img": "/img/template/outro/mot-mieng-2.png",
@@ -119,6 +133,7 @@
   {
     "id": 15,
     "code": "valorant",
+    "name": "Valorant",
     "type": "intro",
     "template": ["game"],
     "img": "/img/template/intro/valorant.png",
@@ -128,6 +143,7 @@
   {
     "id": 16,
     "code": "minh-a",
+    "name": "Mình à",
     "type": "outro",
     "template": ["movie"],
     "img": "/img/template/outro/minh-a.png",
@@ -137,6 +153,7 @@
   {
     "id": 17,
     "code": "chim-soul",
+    "name": "Chìm Soul",
     "type": "music",
     "img": "/img/template/music/chim-soul.png",
     "youtube": "https://www.youtube.com/watch?v=HrXKFsJD0Wk",
@@ -145,6 +162,7 @@
   {
     "id": 18,
     "code": "ai-banh",
+    "name": "Ai Bảnh",
     "type": "intro",
     "img": "/img/template/intro/ai-banh.png",
     "youtube": "https://www.youtube.com/watch?v=F5PsheY_9FY",
@@ -153,6 +171,7 @@
   {
     "id": 19,
     "code": "c-chua",
+    "name": "C Chưa",
     "type": "music",
     "img": "/img/template/music/c-chua.png",
     "youtube": "https://www.youtube.com/watch?v=Db65VyLBnUw",
@@ -161,6 +180,7 @@
   {
     "id": 20,
     "code": "tabu",
+    "name": "Tabu",
     "type": "intro",
     "img": "/img/template/intro/tabu.png",
     "youtube": "https://www.youtube.com/watch?v=zXBjgNiOx44",
@@ -169,6 +189,7 @@
   {
     "id": 21,
     "code": "brand",
+    "name": "Brand",
     "type": "intro",
     "img": "/img/template/intro/brand.png",
     "youtube": "https://www.youtube.com/watch?v=LiuO9ez2odg",
@@ -177,6 +198,7 @@
   {
     "id": 22,
     "code": "chart",
+    "name": "Chart",
     "type": "effect",
     "img": "/img/template/effect/chart.png",
     "youtube": "https://www.youtube.com/watch?v=_IqmMd-Kn5Y",
@@ -185,6 +207,7 @@
   {
     "id": 23,
     "code": "nham-mat",
+    "name": "Nhắm Mắt",
     "type": "intro",
     "img": "/img/template/intro/nham-mat.png",
     "youtube": "https://www.youtube.com/watch?v=1zAQxIekML4",
@@ -193,6 +216,7 @@
   {
     "id": 24,
     "code": "poke",
+    "name": "Poke",
     "type": "intro",
     "img": "/img/template/intro/poke.png",
     "youtube": "https://www.youtube.com/watch?v=FoPMJ7B72P8",

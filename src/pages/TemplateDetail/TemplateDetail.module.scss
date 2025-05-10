@@ -156,12 +156,13 @@
     }
   }
 }
-.share-popup-contaiainer {
+.share-popup-container {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 99;
 
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
@@ -174,6 +175,10 @@
     border-radius: 10px;
     padding: 10px 20px 20px;
 
+    @media (max-width: 480px) {
+      padding: 10px 10px;
+    }
+
     .share-popup-title {
       display: flex;
       align-items: center;
@@ -183,6 +188,10 @@
       font-weight: 700;
       text-align: left;
       color: var(--card-title);
+
+      @media (max-width: 480px) {
+        font-size: 2rem;
+      }
 
       svg {
         transition: 0.3s all ease-in-out;
@@ -204,6 +213,10 @@
       font-weight: 500;
       text-align: left;
       color: var(--card-title);
+
+      @media (max-width: 480px) {
+        font-size: 1.8rem;
+      }
     }
 
     .share-content {
@@ -219,6 +232,14 @@
           display: flex;
           align-self: center;
           justify-content: center;
+
+          @media (max-width: 480px) {
+            margin: 0 10px;
+
+            svg {
+              height: 35px;
+            }
+          }
 
           &:hover {
             cursor: pointer;
@@ -239,6 +260,10 @@
         border: 1px solid var(--border-color);
         transition: 0.3s all linear;
 
+        @media (max-width: 480px) {
+          padding: 5px;
+        }
+
         .copy-link-input {
           color: var(--card-title);
           flex: 1;
@@ -246,12 +271,20 @@
           border: none;
           outline: none;
           background-color: transparent;
+
+          @media (max-width: 480px) {
+            font-size: 1.3rem;
+          }
         }
 
         .copy-icon {
           margin: auto 5px;
           color: var(--card-title);
           cursor: pointer;
+
+          @media (max-width: 480px) {
+            height: 20px;
+          }
 
           &.copied {
             color: green;

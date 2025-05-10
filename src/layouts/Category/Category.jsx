@@ -36,13 +36,13 @@ function Category({ Category, Search, searchCate, relateCate }) {
   useEffect(() => {
     let tmpData = [];
 
-    if (!Search && !searchCate) {
+    if (!Search && (!searchCate || searchCate.length === 0)) {
       switch (Category) {
         case "relate":
           tmpData = data.filter((item) => item.type === relateCate).slice(0, 4);
           break;
         case "new":
-          tmpData = data.sort((a, b) => b.id - a.id).slice(0, 4);
+          tmpData = [...data].sort((a, b) => b.id - a.id).slice(0, 4);
           break;
         case "intro":
         case "outro":
@@ -55,58 +55,32 @@ function Category({ Category, Search, searchCate, relateCate }) {
           break;
       }
     } else {
-      if (searchCate.length > 0) {
-        if (searchCate.length === 1) {
-          searchCate.forEach((cate) => {
-            tmpData = tmpData.concat(
-              data.filter(
-                (item) =>
-                  searchCate.includes(item.type) ||
-                  (Array.isArray(item.template) &&
-                    item.template.some((template) =>
-                      searchCate.includes(template)
-                    ))
-              )
-            );
-          });
-        } else {
-          searchCate.forEach((cate) => {
-            tmpData = data.filter(
-              (item) =>
-                searchCate.includes(item.type) &&
-                Array.isArray(item.template) &&
-                item.template.some((template) => searchCate.includes(template))
-            );
-          });
-        }
+      if (searchCate && searchCate.length > 0) {
+        tmpData = data.filter((item) => {
+          const matchType = searchCate.includes(item.type);
+          const matchTemplate =
+            Array.isArray(item.template) &&
+            item.template.some((template) => searchCate.includes(template));
+          return matchType || matchTemplate;
+        });
+      }
 
-        if (Search) {
-          const code = Search.toLowerCase().replace(/[^a-z0-9]/g, "");
-          tmpData = tmpData.filter(
-            (item) =>
-              item.code
-                .toLowerCase()
-                .replace(/[^a-z0-9]/g, "")
-                .startsWith(code) || item.type.startsWith(code)
-          );
-        }
-      } else {
-        if (Search) {
-          const code = Search.toLowerCase().replace(/[^a-z0-9]/g, "");
-          tmpData = data.filter(
-            (item) =>
-              item.code
-                .toLowerCase()
-                .replace(/[^a-z0-9]/g, "")
-                .startsWith(code) || item.type.startsWith(code)
-          );
-        }
+      if (Search) {
+        const code = Search.toLowerCase().replace(/[^a-z0-9]/g, "");
+        tmpData = tmpData.length > 0 ? tmpData : data;
+        tmpData = tmpData.filter(
+          (item) =>
+            item.name
+              .toLowerCase()
+              .replace(/[^a-z0-9]/g, "")
+              .startsWith(code) || item.type.toLowerCase().startsWith(code)
+        );
       }
     }
 
     setIsFound(tmpData.length > 0);
     setFilteredData(tmpData);
-  }, [Category, Search, searchCate, data]);
+  }, [Category, Search, searchCate, relateCate, data]);
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;

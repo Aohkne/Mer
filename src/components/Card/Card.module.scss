@@ -30,15 +30,6 @@
         margin-top: 10px;
         align-items: center;
 
-        img {
-          width: 20px;
-          margin-right: 5px;
-          filter: brightness(var(--icon-item-brightness-withbg));
-        }
-        .like-icon {
-          width: 15px;
-        }
-
         .info-content {
           font-size: 1.5rem;
           display: flex;

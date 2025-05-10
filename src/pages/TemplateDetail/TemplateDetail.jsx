@@ -171,7 +171,7 @@ function TemplateDetail({ data }) {
 
               {isSharePopupVisible && (
                 <div
-                  className={cx("share-popup-contaiainer")}
+                  className={cx("share-popup-container")}
                   onClick={() => setIsSharePopupVisible(false)}
                 >
                   <div

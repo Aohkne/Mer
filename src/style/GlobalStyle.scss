@@ -4,6 +4,7 @@ html {
 }
 
 .App {
+  min-height: 100vh;
   padding: 10px 5px;
   background-color: var(--background-color);
   transition: all 0.3s ease-in-out;
@@ -30,7 +31,7 @@ html {
   //Variable
   --background-color: #e3e3d7;
   --nav-background-color: #1e1f20;
-  --icon-item-brightness-withbg: 100%;
+  --icon-item-brightness: 50%;
   --icon-item-brightness-nobg: 0%;
   --icon-color: #242424;
   --icon-color-withbg: #fff;

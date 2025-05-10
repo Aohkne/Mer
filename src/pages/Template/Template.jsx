@@ -22,19 +22,31 @@ function Template() {
     setSearch(e.target.value);
   };
 
-  const handleClickTag = (e, cate) => {
+  const handleClickTag = (e, cate, kind) => {
     e.stopPropagation();
-    setIsActive((prev) => ({
-      ...prev,
-      [cate]: !prev[cate],
-    }));
 
-    setSearchCate((prevCate) => {
-      if (prevCate.includes(cate)) {
-        return prevCate.filter((item) => item !== cate);
-      }
-      return [...prevCate, cate];
-    });
+    if (kind === "tag") {
+      setIsActive((prev) => {
+        const isCurrentlyActive = prev[cate];
+        return isCurrentlyActive ? {} : { [cate]: true };
+      });
+
+      setSearchCate((prevCate) => {
+        return prevCate.includes(cate) ? [] : [cate];
+      });
+    } else if (kind === "template") {
+      setIsActive((prev) => ({
+        ...prev,
+        [cate]: !prev[cate],
+      }));
+
+      setSearchCate((prevCate) => {
+        if (prevCate.includes(cate)) {
+          return prevCate.filter((item) => item !== cate);
+        }
+        return [...prevCate, cate];
+      });
+    }
   };
 
   useEffect(() => {
@@ -80,7 +92,11 @@ function Template() {
     <div className={cx("wrapper")} onClick={() => setIsOpenFilter(false)}>
       <div className={cx("action")}>
         <div className={cx("input-container")}>
-          <input type="text" onChange={handleSearch} />
+          <input
+            type="text"
+            onChange={handleSearch}
+            placeholder="Look up a slide title..."
+          />
 
           <button className={cx("normal-bg")}>
             <img src="/img/icon/search-icon.png" alt="search-icon" />
@@ -107,7 +123,7 @@ function Template() {
                   <div
                     className={cx("tag-hover", { active: isActive[item.type] })}
                     key={index}
-                    onClick={(e) => handleClickTag(e, item.type)}
+                    onClick={(e) => handleClickTag(e, item.type, "tag")}
                   >
                     <Tag type={item.type} />
                   </div>
@@ -121,7 +137,9 @@ function Template() {
                       active: isActive[item.template],
                     })}
                     key={index}
-                    onClick={(e) => handleClickTag(e, item.template)}
+                    onClick={(e) =>
+                      handleClickTag(e, item.template, "template")
+                    }
                   >
                     <Tag template={item.template} />
                   </div>

@@ -32,6 +32,14 @@
       font-weight: bold;
       font-size: 3rem;
 
+      @media (max-width: 992px) {
+        font-size: 2.5rem;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+
       span {
         color: var(--purple);
       }
@@ -49,6 +57,10 @@
         height: auto;
         width: 150px;
         animation: blink 1.5s linear infinite;
+
+        @media (max-width: 992px) {
+          width: 100px;
+        }
       }
 
       .bot-info {
@@ -63,6 +75,10 @@
         background-color: var(--white);
         animation: nodding 10s infinite;
         transform-origin: center center;
+
+        @media (max-width: 992px) {
+          font-size: 1.8rem;
+        }
       }
     }
   }
