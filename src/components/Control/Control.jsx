@@ -11,7 +11,7 @@ function Control() {
         <Theme />
       </div>
       <div className={cx("chat-icon")}>
-        <img src="/img/theme/mer-bot.png" alt="" />
+        <img src="/img/theme/mer-bot.png" alt="mer-bot" />
       </div>
     </div>
   );

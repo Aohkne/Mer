@@ -25,6 +25,7 @@ html {
   --white: #fff;
   --black: #000;
   --gray: #d2d2d2;
+  --purple: #cb6be6;
 
   //Variable
   --background-color: #e3e3d7;
@@ -36,6 +37,18 @@ html {
   --icon-color-theme: #242424;
   --shadow-icon: #fff;
   --shadow-color: #00000040;
+
+  //Mer
+  --bot-shawdow-color: #44dedd;
+
+  // --bot-shawdow-color: linear-gradient(
+  //   360deg,
+  //   #44dedd,
+  //   #9fe18e,
+  //   #fbc657,
+  //   #fa9d5d,
+  //   #d485da
+  // );
 
   //Opposite
   --card-bg-color: #000000;
@@ -61,6 +74,11 @@ html {
   .title-color {
     color: #fff;
   }
+
+  .title-color-withbg {
+    color: #000;
+  }
+
   .description-color {
     color: #242424;
   }
@@ -125,6 +143,9 @@ html {
   --shadow-icon: #1e1f20;
   --shadow-color: #fff;
 
+  //Mer
+  --bot-shawdow-color: #d485da;
+
   // Opposite
   --card-bg-color: #fff;
   --card-title-color: #000000;
@@ -149,6 +170,11 @@ html {
   .title-color {
     color: #000000;
   }
+
+  .title-color-withbg {
+    color: #fcba30;
+  }
+
   .description-color {
     color: #d2d2d2;
   }
