@@ -1,6 +1,5 @@
 .wrapper {
   position: fixed;
-  overflow: hidden;
   right: 1%;
   bottom: 0;
 
@@ -13,10 +12,17 @@
     transition: transform 0.5s ease-out;
   }
 
+  .chat-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+  }
+
   .chat-icon {
-    margin: 20px 0 20px;
     transition: transform 0.5s ease;
     transform: rotate(0deg);
+    z-index: 1;
 
     img {
       width: 50px;
@@ -27,6 +33,22 @@
       cursor: pointer;
       transform: rotate(360deg);
     }
+  }
+
+  .random-message {
+    position: absolute;
+    right: 50px;
+    text-align: center;
+    font-size: 1.6rem;
+    backdrop-filter: blur(20px);
+    background-color: #cccccc00;
+    color: #000;
+    padding: 8px 12px;
+    border-radius: 15px;
+    width: 250px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 1px 5px var(--shadow-color);
+    animation: fadeIn 0.3s ease-in-out;
   }
 
   &:hover {
@@ -56,5 +78,16 @@
   100% {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

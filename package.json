@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
     "bootstrap": "^5.3.3",
     "classnames": "^2.5.1",
     "cra-template": "1.2.0",
@@ -10,9 +11,12 @@
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.7",
     "react-dom": "^19.0.0",
+    "react-markdown": "^10.1.0",
     "react-router-dom": "^6.28.1",
     "react-scripts": "5.0.1",
     "react-share": "^5.2.2",
+    "rehype-raw": "^7.0.0",
+    "rehype-sanitize": "^6.0.0",
     "sass": "^1.83.0",
     "web-vitals": "^4.2.4"
   },
