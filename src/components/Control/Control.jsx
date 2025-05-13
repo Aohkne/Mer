@@ -9,7 +9,8 @@ const cx = classNames.bind(styles);
 const randomMessages = [
   "Hôm nay cũng bị deadline dí à?",
   "Hôm nay bạn thế nào?",
-  "Subscribe kênh YouTube đi mà!",
+  "Subscribe kênh YouTube chưa người đẹp!",
+  "Psst... I'm down here if you need me!",
 ];
 
 function Control() {
@@ -38,18 +39,24 @@ function Control() {
 
   return (
     <div className={cx("wrapper")}>
-      <div className={cx("theme")}>
-        <Theme />
-      </div>
+      {!isChatOpen && (
+        <div className={cx("theme")}>
+          <Theme />
+        </div>
+      )}
+
       <div className={cx("chat-container")}>
         {showMessage && (
           <div className={cx("random-message", "description-color")}>
             {randomMessage}
           </div>
         )}
-        <div className={cx("chat-icon")} onClick={toggleChat}>
-          <img src="/img/theme/mer-bot.png" alt="mer-bot" />
-        </div>
+
+        {!isChatOpen && (
+          <div className={cx("chat-icon")} onClick={toggleChat}>
+            <img src="/img/theme/mer-bot.png" alt="mer-bot" />
+          </div>
+        )}
       </div>
 
       <Chat isChatOpen={isChatOpen} toggleChat={toggleChat} />

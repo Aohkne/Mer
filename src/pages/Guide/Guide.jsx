@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Nav from "../../components/Nav/Nav";
 
 import styles from "./Guide.module.scss";
@@ -6,6 +7,8 @@ import classNames from "classnames/bind";
 const cx = classNames.bind(styles);
 
 function Guide() {
+  const [isDark] = useState(localStorage.getItem("theme") === "dark");
+
   return (
     <div className={cx("wrapper")}>
       <Nav direction={"horizontal"} />
@@ -36,9 +39,35 @@ function Guide() {
         </h3>
 
         <div className={cx("bot-container")}>
-          <img src="/img/theme/mer-guide.png" alt="mer-guide" />
+          <div className={cx("bot-name")}>
+            <img src="/img/theme/mer-guide.png" alt="mer-guide" />
 
-          <div className={cx("bot-info")}> I'm Mer Bot</div>
+            <div className={cx("bot-info")}> I'm Mer Bot</div>
+          </div>
+
+          <div className={cx("bot-location")}>
+            <li className={cx("bot-description", "description-color")}>
+              You'll find the Mer bot in the bottom right corner
+            </li>
+
+            {isDark ? (
+              <img src="/img/theme/mer-location-dark.png" alt="mer-guide" />
+            ) : (
+              <img src="/img/theme/mer-location-light.png" alt="mer-guide" />
+            )}
+          </div>
+
+          <div className={cx("bot-ui")}>
+            <li className={cx("bot-description", "description-color")}>
+              Chat UI
+            </li>
+
+            {isDark ? (
+              <img src="/img/theme/mer-chat-dark.png" alt="mer-guide" />
+            ) : (
+              <img src="/img/theme/mer-chat-light.png" alt="mer-guide" />
+            )}
+          </div>
         </div>
       </div>
     </div>

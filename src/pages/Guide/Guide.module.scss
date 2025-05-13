@@ -53,31 +53,91 @@
     .bot-container {
       margin: 20px 0;
 
-      img {
-        height: auto;
-        width: 150px;
-        animation: blink 1.5s linear infinite;
+      .bot-name {
+        @media (max-width: 480px) {
+          display: flex;
+          justify-content: center;
+        }
 
-        @media (max-width: 992px) {
-          width: 100px;
+        img {
+          height: auto;
+          width: 150px;
+          animation: blink 1.5s linear infinite;
+
+          @media (max-width: 992px) {
+            width: 100px;
+          }
+
+          @media (max-width: 480px) {
+            width: 80px;
+          }
+        }
+
+        .bot-info {
+          display: inline-block;
+          margin: 0 30px;
+          padding: 10px 20px;
+          color: var(--black);
+          font-size: 2rem;
+          font-weight: bold;
+          border-radius: 8px;
+          border: 2px solid var(--black);
+          background-color: var(--white);
+          animation: nodding 10s infinite;
+          transform-origin: center center;
+
+          @media (max-width: 992px) {
+            font-size: 1.8rem;
+          }
+
+          @media (max-width: 480px) {
+            margin: auto 20px;
+            font-size: 1.6rem;
+          }
         }
       }
 
-      .bot-info {
-        display: inline-block;
-        margin: 0 30px;
-        padding: 10px 20px;
-        color: var(--black);
-        font-size: 2rem;
-        font-weight: bold;
-        border-radius: 8px;
-        border: 2px solid var(--black);
-        background-color: var(--white);
-        animation: nodding 10s infinite;
-        transform-origin: center center;
+      .bot-ui,
+      .bot-location {
+        padding: 0 0 30px;
+        margin: 10px 0 10px;
+        transition: all 0.3s linear;
+
+        .bot-description {
+          margin: 0 0 20px;
+          font-size: 2rem;
+        }
+
+        img {
+          border: 1px solid var(--border-color);
+          height: auto;
+          max-width: 650px;
+          border-radius: 10px;
+        }
 
         @media (max-width: 992px) {
-          font-size: 1.8rem;
+          margin: 20px 0;
+
+          img {
+            max-width: 450px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          margin: 10px 0;
+
+          img {
+            max-width: 250px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          margin: 30px 0;
+          padding: 0px 0 30px;
+
+          img {
+            max-width: 250px;
+          }
         }
       }
     }

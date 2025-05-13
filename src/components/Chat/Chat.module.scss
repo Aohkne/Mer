@@ -1,8 +1,17 @@
 .chatbot {
   position: fixed;
   bottom: 20px;
-  right: 10px;
-  z-index: 999;
+  right: 8px;
+  z-index: 10;
+
+  @media (max-width: 768px) {
+    bottom: 65px;
+  }
+
+  @media (max-width: 480px) {
+    right: 5px;
+    left: 5px;
+  }
 }
 
 .chat-box {
@@ -12,7 +21,6 @@
   height: 400px;
   backdrop-filter: blur(5px);
   border: 1px solid var(--border-color);
-
   background-color: var(--chat-bg);
   border-radius: 10px;
   display: none;
@@ -20,6 +28,10 @@
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   animation: slideUp 0.3s ease-in-out;
+
+  @media (max-width: 480px) {
+    width: 100%;
+  }
 }
 
 .chat-box.open {
@@ -30,7 +42,6 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: var(--bot-message-bg);
   color: var(--white);
   padding: 5px;
   width: 25px;
@@ -41,7 +52,15 @@
   border-radius: 50%;
   border: none;
   cursor: pointer;
-  z-index: 2;
+  transition: all 0.3s ease-in;
+  box-shadow: 0px 0px 10px var(--shadow-color);
+  background-color: var(--bot-message-bg);
+  z-index: 10;
+
+  &:hover {
+    transform: translateY(2px);
+    box-shadow: 0px 0px 2px var(--shadow-color);
+  }
 }
 
 .messages {
@@ -51,7 +70,12 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
+  overflow-y: scroll;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .message {

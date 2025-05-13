@@ -6,9 +6,9 @@
   .item {
     height: 100%;
     img {
-      height: 100%; /* Set image to cover the height */
-      width: 100%; /* Make sure it takes the full width */
-      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
       object-position: center;
     }
   }

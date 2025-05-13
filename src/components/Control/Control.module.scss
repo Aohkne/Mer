@@ -42,7 +42,7 @@
     font-size: 1.6rem;
     backdrop-filter: blur(20px);
     background-color: #cccccc00;
-    color: #000;
+    color: var(--bot-message-bg);
     padding: 8px 12px;
     border-radius: 15px;
     width: 250px;

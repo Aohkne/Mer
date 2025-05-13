@@ -45,7 +45,7 @@ function Chat({ isChatOpen, toggleChat }) {
         ...prev,
         {
           from: "bot",
-          text: "Xin lỗi, hôm nay hoạt động hơi nhiều nên có thể tôi đã bị lỗi, bạn có thể quay lại khi lúc sau khi tui khoẻ lại nha!",
+          text: "Xin lỗi, hôm nay hoạt động hơi nhiều nên có thể tôi đã bị lỗi, bạn có thể quay lại lúc sau khi tui khoẻ lại nha!",
         },
       ]);
     }
@@ -107,7 +107,7 @@ function Chat({ isChatOpen, toggleChat }) {
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Nhập tin nhắn..."
+            placeholder="Ask anything about website"
             onKeyDown={(e) => e.key === "Enter" && handleSend()}
           />
           <button onClick={handleSend} disabled={loading}>

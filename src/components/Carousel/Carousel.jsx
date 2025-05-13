@@ -7,8 +7,8 @@ const cx = classNames.bind(styles);
 
 function Carosel() {
   const images = [
-    { src: "img/slider/slider_1.png", alt: "slider_1" },
-    { src: "img/slider/slider_1.png", alt: "slider_2" },
+    { src: "img/slider/slider_1.png", alt: "Info" },
+    { src: "img/slider/slider_2.png", alt: "Mer Bot" },
     { src: "img/slider/slider_1.png", alt: "slider_2" },
   ];
 
