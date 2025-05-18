@@ -18,7 +18,12 @@ function Chat({ isChatOpen, toggleChat }) {
   ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const [typing, setTyping] = useState(false);
+  const [currentTypingMessage, setCurrentTypingMessage] = useState(null);
+  const [displayedText, setDisplayedText] = useState("");
+  const [currentCharIndex, setCurrentCharIndex] = useState(0);
   const messagesEndRef = useRef(null);
+  const typingSpeed = 30;
 
   const handleSend = async () => {
     if (!input.trim()) return;
@@ -37,25 +42,52 @@ function Chat({ isChatOpen, toggleChat }) {
       const response = await result.response;
       const text = await response.text();
 
-      // Store the response in the messages state
-      setMessages((prev) => [...prev, { from: "bot", text }]);
+      setCurrentTypingMessage({ from: "bot", text });
+      setDisplayedText("");
+      setCurrentCharIndex(0);
+      setTyping(true);
+      setLoading(false);
     } catch (err) {
       console.error("Error:", err);
-      setMessages((prev) => [
-        ...prev,
-        {
-          from: "bot",
-          text: "Xin lỗi, hôm nay hoạt động hơi nhiều nên có thể tôi đã bị lỗi, bạn có thể quay lại lúc sau khi tui khoẻ lại nha!",
-        },
-      ]);
-    }
+      const errorText =
+        "Xin lỗi, hôm nay hoạt động hơi nhiều nên có thể tôi đã bị lỗi, bạn có thể quay lại lúc sau khi tui khoẻ lại nha!";
 
-    setLoading(false);
+      setCurrentTypingMessage({ from: "bot", text: errorText });
+      setDisplayedText("");
+      setCurrentCharIndex(0);
+      setTyping(true);
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
+    if (
+      typing &&
+      currentTypingMessage &&
+      currentCharIndex < currentTypingMessage.text.length
+    ) {
+      const timer = setTimeout(() => {
+        setDisplayedText(
+          (prev) => prev + currentTypingMessage.text[currentCharIndex]
+        );
+        setCurrentCharIndex((prev) => prev + 1);
+      }, typingSpeed);
+
+      return () => clearTimeout(timer);
+    } else if (
+      typing &&
+      currentTypingMessage &&
+      currentCharIndex >= currentTypingMessage.text.length
+    ) {
+      setMessages((prev) => [...prev, currentTypingMessage]);
+      setCurrentTypingMessage(null);
+      setTyping(false);
+    }
+  }, [typing, currentTypingMessage, currentCharIndex, typingSpeed]);
+
+  useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
+  }, [messages, typing, displayedText]);
 
   // Convert URLs in plain text to markdown links
   const makeLinksClickable = (text) => {
@@ -99,6 +131,22 @@ function Chat({ isChatOpen, toggleChat }) {
               )}
             </div>
           ))}
+
+          {typing && currentTypingMessage && (
+            <div className={cx("message", "bot")}>
+              <ReactMarkdown
+                rehypePlugins={[rehypeRaw, rehypeSanitize]}
+                components={{
+                  a: ({ node, ...props }) => (
+                    <a {...props} target="_blank" rel="noopener noreferrer" />
+                  ),
+                }}
+              >
+                {makeLinksClickable(displayedText)}
+              </ReactMarkdown>
+            </div>
+          )}
+
           <div ref={messagesEndRef} />
         </div>
 
@@ -108,9 +156,12 @@ function Chat({ isChatOpen, toggleChat }) {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Ask anything about website"
-            onKeyDown={(e) => e.key === "Enter" && handleSend()}
+            onKeyDown={(e) =>
+              e.key === "Enter" && !typing && !loading && handleSend()
+            }
+            disabled={typing || loading}
           />
-          <button onClick={handleSend} disabled={loading}>
+          <button onClick={handleSend} disabled={typing || loading}>
             <Send size={20} />
           </button>
         </div>
