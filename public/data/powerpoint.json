@@ -155,6 +155,7 @@
     "code": "chim-soul",
     "name": "Chìm Soul",
     "type": "music",
+    "template": [],
     "img": "/img/template/music/chim-soul.png",
     "youtube": "https://www.youtube.com/watch?v=HrXKFsJD0Wk",
     "download": "/powerpoint/music/chìm sâu.zip"
@@ -164,6 +165,7 @@
     "code": "ai-banh",
     "name": "Ai Bảnh",
     "type": "intro",
+    "template": [],
     "img": "/img/template/intro/ai-banh.png",
     "youtube": "https://www.youtube.com/watch?v=F5PsheY_9FY",
     "download": "/powerpoint/intro/Ai Bảnh.zip"
@@ -173,6 +175,7 @@
     "code": "c-chua",
     "name": "C Chưa",
     "type": "music",
+    "template": [],
     "img": "/img/template/music/c-chua.png",
     "youtube": "https://www.youtube.com/watch?v=Db65VyLBnUw",
     "download": "/powerpoint/music/C chưa.zip"
@@ -182,6 +185,7 @@
     "code": "tabu",
     "name": "Tabu",
     "type": "intro",
+    "template": [],
     "img": "/img/template/intro/tabu.png",
     "youtube": "https://www.youtube.com/watch?v=zXBjgNiOx44",
     "download": "/powerpoint/intro/tabu.zip"
@@ -191,6 +195,7 @@
     "code": "brand",
     "name": "Brand",
     "type": "intro",
+    "template": [],
     "img": "/img/template/intro/brand.png",
     "youtube": "https://www.youtube.com/watch?v=LiuO9ez2odg",
     "download": "/powerpoint/intro/brand.zip"
@@ -200,6 +205,7 @@
     "code": "chart",
     "name": "Chart",
     "type": "effect",
+    "template": [],
     "img": "/img/template/effect/chart.png",
     "youtube": "https://www.youtube.com/watch?v=_IqmMd-Kn5Y",
     "download": "/powerpoint/effect/Chart Effect.zip"
@@ -209,6 +215,7 @@
     "code": "nham-mat",
     "name": "Nhắm Mắt",
     "type": "intro",
+    "template": [],
     "img": "/img/template/intro/nham-mat.png",
     "youtube": "https://www.youtube.com/watch?v=1zAQxIekML4",
     "download": "/powerpoint/intro/nhắm mắt.zip"
@@ -218,8 +225,19 @@
     "code": "poke",
     "name": "Poke",
     "type": "intro",
+    "template": ["game", "movie"],
     "img": "/img/template/intro/poke.png",
     "youtube": "https://www.youtube.com/watch?v=FoPMJ7B72P8",
     "download": "/powerpoint/intro/Poke.zip"
+  },
+  {
+    "id": 25,
+    "code": "i-found",
+    "name": "Found",
+    "type": "music",
+    "template": [],
+    "img": "/img/template/music/i-found.png",
+    "youtube": "https://www.youtube.com/watch?v=NCELKjZ1bdA",
+    "download": "/powerpoint/music/I-found.zip"
   }
 ]
