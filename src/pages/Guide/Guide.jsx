@@ -19,7 +19,7 @@ function Guide() {
         <iframe
           width="100%"
           height="514"
-          src={"https://www.youtube.com/embed/YGO0ritoMHQ"}
+          src={"https://www.youtube.com/embed/dZn2OPClFJw"}
           title={"Guide"}
           allow="accelerometer; autoplay; encrypted-media; gyroscope;"
           allowFullScreen
