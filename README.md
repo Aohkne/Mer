@@ -232,9 +232,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you find Mer useful, please consider giving it a star ⭐ on GitHub to help others discover it.
 
-[![GitHub stars](https://img.shields.io/github/stars/Aohkne/Mer?style=social)](Aohkne/Mer)
-[![GitHub forks](https://img.shields.io/github/forks/Aohkne/Mer?style=social)](Aohkne/Mer/fork)
-[![GitHub watchers](https://img.shields.io/github/watchers/Aohkne/Mer?style=social)](Aohkne/Mer)
+[![GitHub stars](https://img.shields.io/github/stars/Aohkne/Mer?style=social)](https://github.com/Aohkne/Mer)
+[![GitHub forks](https://img.shields.io/github/forks/Aohkne/Mer?style=social)](https://github.com/Aohkne/Mer/fork)
+[![GitHub watchers](https://img.shields.io/github/watchers/Aohkne/Mer?style=social)](https://github.com/Aohkne/Mer)
 
 ---
 
